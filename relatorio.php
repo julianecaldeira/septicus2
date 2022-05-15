@@ -1,3 +1,11 @@
+<?php
+
+function isCampoVazio($variable){
+
+    return ($variable == "NaN");
+}
+
+?>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -181,8 +189,7 @@ if(isset($_POST["diametroSumidouro"])){
 
                     <?php 
                     ## SE POSSUI SUMIDOURO ##
-                    if($diametroSumidouro != ""){
-
+                    if(!isCampoVazio($diametroSumidouro)){
                         echo "<thead>";
                         echo "<tr>";
                                 echo "<th> Equipamento </th>";
@@ -222,7 +229,7 @@ if(isset($_POST["diametroSumidouro"])){
                    <thead>
                        <tr>
                            <th>Mistura</th>
-                           <th>UtilizaçãO</th>
+                           <th>Utilização</th>
                            <th>Traço</th>
                            <th>Cimento</th>  
                            <th>Cal</th> 
@@ -351,7 +358,7 @@ if(isset($_POST["diametroSumidouro"])){
                             <th>Materiais</th>
                             <th>Descrição</th>
                             <th>Quant. Tanque Séptico</th>
-                            <th> Quant. Sumidouro</th>  
+                            <th>Quant. Sumidouro</th>  
                             <th>Quantidade total</th>  
                         </tr>                     
                     </thead>
@@ -364,7 +371,7 @@ if(isset($_POST["diametroSumidouro"])){
                             <td>
                             <?php 
                     ## SE POSSUI SUMIDOURO ##
-                    if($diametroSumidouro != ""){
+                    if(!isCampoVazio($diametroSumidouro)){
                         echo $blocoSumidouro; 
                     }else{
                         echo "0";
@@ -372,8 +379,8 @@ if(isset($_POST["diametroSumidouro"])){
                             ?> 
                             </td>  <!-- sumidouro -->
                             <td><b><?php                     
-                            ## SE POSSUI SUMIDOURO ##
-                    if($diametroSumidouro != ""){
+                     ## SE POSSUI SUMIDOURO ##
+                    if(!isCampoVazio($diametroSumidouro)){
                         echo $blocoTotal; 
                     }else{
                         echo $blocoTanque;
@@ -385,13 +392,13 @@ if(isset($_POST["diametroSumidouro"])){
                             <td><?php echo $cimentoTanque; ?> </td>
                             <td><?php                     
                     ## SE POSSUI SUMIDOURO ##
-                    if($diametroSumidouro != ""){
+                    if(!isCampoVazio($diametroSumidouro)){
                         echo $cimentoSumidouro; 
                     }else{
                         echo "0";
                     }  ?>   </td> <!-- sumidouro -->
                             <td><b><?php                     
-                    if($diametroSumidouro != ""){
+                    if(!isCampoVazio($diametroSumidouro)){
                         echo $cimentoTotal; 
                     }else{
                         echo $cimentoTanque;
@@ -403,14 +410,14 @@ if(isset($_POST["diametroSumidouro"])){
                             <td><?php echo $calTanque; ?></td>
                             <td><?php                     
                     ## SE POSSUI SUMIDOURO ##
-                    if($diametroSumidouro != ""){
+                    if(!isCampoVazio($diametroSumidouro)){
                         echo $calSumidouro; 
                     }else{
                         echo "0";
                     }  ?>   </td> <!-- sumidouro -->
                             <td><b><?php                             
                         ## SE POSSUI SUMIDOURO ##
-                    if($diametroSumidouro != ""){
+                    if(!isCampoVazio($diametroSumidouro)){
                         echo $calTotal; 
                     }else{
                         echo $calTanque;
@@ -422,7 +429,7 @@ if(isset($_POST["diametroSumidouro"])){
                             <td><?php echo $areiaTanque; ?></td>
                             <td><?php                     
                     ## SE POSSUI SUMIDOURO ##
-                    if($diametroSumidouro != ""){
+                    if(!isCampoVazio($diametroSumidouro)){
                         echo $areiaSumidouro; 
                     }else{
                         echo "0";
@@ -430,7 +437,7 @@ if(isset($_POST["diametroSumidouro"])){
                             </td> <!-- sumidouro -->
                             <td><b><?php                         
                     ## SE POSSUI SUMIDOURO ##
-                    if($diametroSumidouro != ""){
+                    if(!isCampoVazio($diametroSumidouro)){
                         echo $areiaTotal; 
                     }else{
                         echo $areiaTanque;
@@ -447,8 +454,26 @@ if(isset($_POST["diametroSumidouro"])){
                             <td>Brita 03 ou 04</td>
                             <td>Litros</td>
                             <td>0</td>
-                            <td><?php echo $brita03Sumidouro; ?></td>
-                            <td><b><?php echo $brita03Total; ?></b></td>
+                            <td>
+                                <?php 
+                                    if(!isCampoVazio($diametroSumidouro)){
+                                        echo $brita03Sumidouro; 
+                                    }else{
+                                        echo "0";
+                                    }
+                                ?>
+                            </td>
+                            <td>
+                                <b>
+                                <?php 
+                                    if(!isCampoVazio($diametroSumidouro)){
+                                        echo $brita03Total; 
+                                    }else{
+                                        echo "0";
+                                    }
+                                ?>
+                                </b>
+                            </td>
                         </tr>
                         <tr>
                             <td>Água</td>
@@ -518,11 +543,11 @@ if(isset($_POST["diametroSumidouro"])){
                 <?php 
 
                 ## SE POSSUI SUMIDOURO ##
-                if($diametroSumidouro != ""){
+                if(!isCampoVazio($diametroSumidouro)){
 
                     echo "<tbody>";
                             echo "<th> Sumidouro </th>";
-                            echo "<td> Retangular </td>";
+                            echo "<td> Cilíndrico </td>";
                             echo "<td>" . $LarguratampaSumidouro . "</td>";
                             echo "<td>" . $LarguratampaSumidouro . "</td>";
                             echo "<td>" . $AreaTampaSumidouro . "</td>";
