@@ -94,11 +94,9 @@ if(isset($_POST["diametroSumidouro"])){
         <div class="row invoice-info">
             
             <div class="col-sm-4 invoice-col">
-                SEPTICUS V1.0<br>
-                Dimensionamento de tanque séptico e sumidouro<br>
-                Relatório de dimensionamento<br>
-                Iniciação em Desenvolvimento Tecnológico e Inovação<br>
-                IFBA - campus Eunápolis<br>
+                <b>SEPTICUS 2.0</b><br>
+                <i>Copyright (2022)©</i><br>
+                Dimensionamento e levantamento de materiais para tanque sépticos e sumidouro residenciais<br>
                 <address>
                     <strong>
                     </strong>
@@ -107,7 +105,7 @@ if(isset($_POST["diametroSumidouro"])){
             
             <!-- linhas de informações sobre desenvolvedor -->
             <div class="col-sm-4 invoice-col">
-                Desenvolvido por
+                Desenvolvido por:
                 <address>
                     <b>Juliane Ferreira Caldeira</b><br>
                     Graduanda em Engenharia Civil <br>
@@ -119,18 +117,28 @@ if(isset($_POST["diametroSumidouro"])){
 
             <!-- linhas de informações sobre o SEPTICUS -->
             <div class="col-sm-4 invoice-col">
-                <b>Dimensionamento de tanque séptico e sumidouro</b><br>
-                <br>
-                Dimensionamento: <b>Tanque séptico residencial</b><br>
-                Dimensionamento: <b>Sumidouro</b><br>
-                <b>Quantitativo de materiais</b><br>
+                
+            Dimensionamento conforme:<br>
+            <b>ABNT NBR 7229, 1993</b><br>
+            <b>ABNT NBR 13969, 1997</b><br>
+            <b>FUNASA, 2019</b><br>
+            <b>SINAPI, 2020</b>
             </div><!-- /.col -->
         
         </div><!-- /.linhas de informações sobre o projeto -->
         <br>
 
-        <!-- INFORMAÇÕES DO MODAL SUSPENSO: INFORMAÇÕES GEOMETRICAS DO DIMENSIONAMENTO -->
+
+        <hr class="my-4">
+        <h4>Idetificação do projeto</h4> <!-- titulo -->
+
+        <b>Responsável técnico/construtor:</b> Poderia acrescentar na homepage um campo para inserir o nome e imprimir aqui?<br> 
+        <b>Endereço da obra:</b> Poderia acrescentar na homepage um campo para inserir o endereço e imprimir aqui?<br>
+        <b>Data de emissão do relatório</b>: criar uma função que capture a data dia/mês/ano.<br>
+        <hr class="my-4">
+
         
+        <!-- INFORMAÇÕES DO MODAL SUSPENSO: INFORMAÇÕES GEOMETRICAS DO DIMENSIONAMENTO -->       
         <h4>Dimensões</h4> <!-- titulo -->
         <p></p>
         <div class="table-responsive">
@@ -209,7 +217,7 @@ if(isset($_POST["diametroSumidouro"])){
                         echo "</tbody>";
 
                     }else{
-                        echo "<h5> Sumidouro não selecionado. </h5>";
+                        ##echo "<h5> Sumidouro não selecionado. </h5>";##
                     }
 
                     ?>
@@ -558,7 +566,7 @@ if(isset($_POST["diametroSumidouro"])){
                     echo "</tbody>";
 
                 }else{
-                    echo "<h5> Sumidouro não selecionado. </h5>";
+                    ##echo "<h5> Sumidouro não selecionado. </h5>";##
                 }
 
                 ?>
@@ -569,31 +577,21 @@ if(isset($_POST["diametroSumidouro"])){
     </div><!-- /.tabela -->
     <br><br>
 
-    <div class="row">
-        <div class="col-md-12">
-            <p class="lead" align="justify"> 
 
-                • Prever para as tampas um respiradouro, podendo ser uma tubulação e cap de Ø 100 mm.<br>
-                • É importante ressaltar que, nas extremidades, as tavelas devem se apoiar nas vigotas e não nas paredes.<br>
-                • A altura da capa de concreto dependerá das especificações do fabricante podendo variar de 4 cm à 5 cm de altura, com consumo médio de cimento de 53 litros/m² à 97 litros/m² (ArcellorMittal, 2010).<br>
-        
-                <hr class="my-4">
-
-            </p>     
-        </div><!-- /.col -->
-    </div><!-- /.observações -->
- 
         <!-- CAMPOS PARA OBSERVAÇÕES E INFORMAÇÕES ADICIONAIS -->
         <div class="row">
             <div class="col-md-12">
                 <p class="lead" align="justify"> 
-                    <b>OBSERVAÇÕES:</b></br>
-                    • <b>A quantidade de materiais é arredondado para o número inteiro imediatamente superior.</b><br>
-                    • DICA: Uma lata equivale a 18 litros; 1 metro cúbico (m³) equivale a 1.000 litros.<br>
-                    • As tampas das câmaras deverão ser feitas com placas pré-moldadas de concreto, para facilitar a sua execução e até a sua remoção. <br>
-                    • No fundo do sumidouro existe uma camada protetora de brita, que, segundo a norma NBR 13969/96, não deve ser inferior a 30 cm. Será colocada brita número 3 ou 4 com uma altura de 50 cm.<BR> 
-                    • Deverá ser observado o afastamento mínimo de 1,50m de qualquer parede, obstáculos, árvores ou cerca de divisa de terreno e de acordo com o tamanho do terreno.<br>
-                    • O impermeabilizante de ser aplicado de acordo com as instruções do fabricante. Todas as paredes da fossa e o fundo deve ser impermeabilizado.<br>
+                    <b>EXECUÇÃO:</b></br>
+                    • O local da construção deve possuir os seguintes afastamentos mínimos: <b>1,50 metros</b> de construções, limites de terreno e entrada de água; <b>3 metros</b> de árvores; e <b>15 metros</b> de rios, corrégos e poços artesianos.<br>
+                    • Após execução da escavação e, caso seja necessário, da contenção da cava, preparar o fundo com lastro de brita;<br>
+                    • Sobre o lastro de brita, montar as fôrmas da laje de fundo do tanque séptico e suas armaduras. E, em seguida, realizar a sua concretagem;<br>
+                    • Sobre a laje de fundo, assentar os tijolos com argamassa aplicada com colher, atentando-se para o posicionamento dos tubos de entrada e de saída, até a altura da cinta horizontal;<br>
+                    • Executar a cinta sobre a alvenaria com fôrmas, armadura e graute;<BR> 
+                    • Concluída a alvenaria, revestir o fundo e as paredes internamente com chapisco e reboco e externamente somente com chapisco;<br>
+                    • Por fim, colocar as peças pré-moldadas de fechamento sobre o tanque séptico e instalar a tampa hermética de inspeção;<br>
+                    • O fundo do sumidouro terá uma camada de brita número 3 ou 4 com uma altura de 50 cm.<br><br>
+
                 </p>
                 
             </div><!-- /.col -->
@@ -603,9 +601,9 @@ if(isset($_POST["diametroSumidouro"])){
         <!-- Botões no final da página / dimensionar:retorna para os dados de entra / Memorial de cálculo: exibe ou faz o download do pdf com o passo a passo do calculo / Gerar PDF: salva a página atual no formato PDF -->
         <div class="row no-print">
             <div class="col-xs-12">
-            <button class="btn btn-primary pull-right" onclick="location.href='index.php';"; style="margin-right: 5px;">Dimensionar</button>
+            <button class="btn btn-primary pull-right" onclick="location.href='index.php';"; style="margin-right: 5px;">Redimensionar</button>
                 <button class="btn btn-primary pull-right" onclick="location.href='anexos.php';"; style="margin-right: 5px;">Anexos</button>
-                <button class="btn btn-primary pull-right" onclick=window.print(); style="margin-right: 5px;">Gerar PDF</button>
+                <button class="btn btn-primary pull-right" onclick=window.print(); style="margin-right: 5px;">Imprimir</button>
             </div>
         </div>
     </section>
