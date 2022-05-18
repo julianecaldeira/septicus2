@@ -53,9 +53,9 @@
 <body>
 
 	<!-- TITULO SITE GERAL-->
-    <nav class="navbar navbar-light" style="background-color: #00B8F1; font-family: monospace; font-weight: 500;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
       <div class="container">
-          <a class="navbar-brand" href="#">SEPTICUS V2.0</a>
+          <a class="navbar-brand" href="index.php">SEPTICUS 2.0</a>
       			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         			<span class="navbar-toggler-icon"></span>
      			</button>
@@ -81,8 +81,7 @@
   	<!-- Títulos -->
   	<div class="container text-center">
   	<!-- Jumbotron -->
-      <div class="" style="padding-top: 5px; margin-top: 10px; font-family: monospace; color: black;">
-        <div class="alert alert-info" role="alert" style="box-shadow: -20px -3px 4px 5px rgb(0 184 241 / 69%); color: black;">
+      <div class="jumbotron" style="padding-top: 5px; margin-top: 10px;">
         <P></P>
           <center><img id="imagembanner" src="https://raw.githubusercontent.com/julianecaldeira/Septicus/main/Imagens/SepticusLogo.png" width="290px;"></center>
         <P></P>

@@ -130,7 +130,7 @@ if(isset($_POST["diametroSumidouro"])){
 
 
         <hr class="my-4">
-        <h4>Idetificação do projeto</h4> <!-- titulo -->
+        <h4>Identificação do projeto</h4> <!-- titulo -->
 
         <b>Responsável técnico/construtor:</b> Poderia acrescentar na homepage um campo para inserir o nome e imprimir aqui?<br> 
         <b>Endereço da obra:</b> Poderia acrescentar na homepage um campo para inserir o endereço e imprimir aqui?<br>

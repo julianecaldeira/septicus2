@@ -20,7 +20,7 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<title>JULIANE</title>
+	<title>SEPTICUS</title>
 	
 
 	<style>
@@ -177,9 +177,9 @@
 
 
 	<!-- TITULO SITE GERAL-->
-	<nav class="navbar navbar-light" style="background-color: #00B8F1; font-family: monospace; font-weight: 500;">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
 		<div class="container">
-			<a class="navbar-brand" href="#">SEPTICUS V2.0</a>
+			<a class="navbar-brand" href="#">SEPTICUS 2.0</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -204,8 +204,7 @@
 	<!-- Títulos -->
 	<div class="container text-center">
 		<!-- Jumbotron -->
-		<div class="" style="padding-top: 5px; margin-top: 20px; font-family: monospace; color: black;">
-			<div class="alert alert-info" role="alert" style="box-shadow: -20px -3px 4px 5px rgb(0 184 241 / 69%); color: black;">
+		<div class="jumbotron" style="padding-top: 5px; margin-top: 10px;">
 			<P></P>
 				<center><img id="imagembanner" src="https://raw.githubusercontent.com/julianecaldeira/Septicus/main/Imagens/SepticusLogo.png" width="290px;"></center>
 			<P></P>
@@ -222,7 +221,8 @@
 		<div class="alert alert-light" role="alert" style="margin: 0 auto;
     color: black;
     width: fit-content;
-    border-radius: 10px;">
+    border-radius: 10px;
+	width: 45%;">
 		<label><b>Escolha a geometria do tanque séptico:</b></label>
 		<p></p>
 
@@ -244,9 +244,17 @@
     color: black;
     width: fit-content;
     border-radius: 10px; 
-    margin-bottom: 15px;">
+    margin-bottom: 15px;
+	width: 45%;">
 
 		<label for="campoValor" class="form-label" id="tipoValor"><b>Insira o diâmetro ou largura (m):</b></label>
+		
+		<!-- Botão com informações adicionais -->
+		<button type="button" class="btn btn-secondary" id="botaoHelpDiametroLargura" data-container="body" title="Dimensões mínimas:" data-toggle="popover" data-placement="top" data-content="• Diâmetro mínimo: 1,10m <br /><b> • Diâmetro recomendado: 2,00m </b><br /> • Largura mínima: 0,80m <br /><b> • Largura recomendada: 1,00m</b>" data-html="true"
+			style="margin-bottom: 5px; border-radius: 100px; font-size: smaller;">
+			?
+		</button>
+		
 		<input type="number" disabled= "true" min="0.8" max="10" onkeyup="imposeMinMax(this)" id="campoValor" class="form-control" style="width: auto; 
 		margin: 0 auto; 
 		text-align: center; 
@@ -267,14 +275,15 @@
     color: black;
     width: fit-content;
     border-radius: 10px;
-    margin-bottom: 15px;">
-		<label for="campoNumPessoas" class="form-label"><b>Insira o número de pessoas ou unidades de contribuição: </b></label>
+    margin-bottom: 15px;
+	width: 45%;">
+		<label for="campoNumPessoas" class="form-label"><b>Insira o número de pessoas ou contribuintes: </b></label>
 
 		<!-- Botão com informações adicionais -->
-		<button type="button" class="btn btn-secondary" id="botaoHelpInfiltracao" data-container="body" title="Exemplos:" data-toggle="popover" data-placement="top" data-content="• Quantas pessoas residem no imóvel? (ou número de dormitórios X2) <br /> • Quantas refeições são servidas diariamente em um restaurante? <br /> • Quantos lugares em um cinema? <br /> • Quantas bacias sanitárias em um sanitário público?" data-html="true"
-		style="margin-bottom: 5px; border-radius: 120px; font-size: smaller;">
-		?
-		</button>  
+		<button type="button" class="btn btn-secondary" id="botaoHelpContribuintes" data-container="body" title="Número de ocupantes do imóvel:" data-toggle="popover" data-placement="top" data-content="Quantas pessoas residem/residerão na edificação OU número de dormitórios multiplicado por 2" data-html="true"
+			style="margin-bottom: 5px; border-radius: 120px; font-size: smaller;">
+			?
+		</button>    
 
 		<input type="number" min="1" id="campoNumPessoas" class="form-control" style="width: auto; margin: 0 auto; margin: 0 auto; 
 		text-align: center; 
@@ -291,23 +300,24 @@
     color: black;
     width: fit-content;
     border-radius: 10px;
-    margin-bottom: 15px;">
+    margin-bottom: 15px;
+	width: 45%;">
 
 		<label class="form-label"><b>Tipo de habitação:</b></label> <br>
 		<select class="selectpicker" title="Selecionar..." data-width="auto" data-live-search="true" id="tipoResidenciaOption" aria-label=".form-select-lg example" style="width: auto;">
 		<option value="1">Casa - Padrão ALTO</option>
 		<option value="2">Casa - Padrão MÉDIO</option>
 		<option value="3">Casa - Padrão BAIXO</option>
-		<option value="4">Hotel</option>
+		<!--<option value="4">Hotel</option>-->
 		<option value="5">Alojamento Provisório</option>
-		<option value="6">Fábrica em Geral</option>
+		<!--<option value="6">Fábrica em Geral</option>
 		<option value="7">Escritório</option>
 		<option value="8">Edifícios Públicos ou Comerciais</option>
 		<option value="9">Escolas</option>
 		<option value="10">Bares</option>
 		<option value="11">Restaurantes e similares</option>
 		<option value="12">Cinemas, Teatros, Locais de Curta permanência</option>
-		<option value="13">Sanitários Públicos</option>
+		<option value="13">Sanitários Públicos</option>-->
 		</select>
 		<br>
 		<br>
@@ -318,9 +328,17 @@
     color: black;
     width: fit-content;
     border-radius: 10px;
-    margin-bottom: 15px;">
+    margin-bottom: 15px;
+	width: 45%;">
 
-		<label class="form-label"><b>Temperatura do mês mais frio (°C):</b></label> <br>
+		<label class="form-label"><b>Temperatura do mês mais frio (°C):</b></label>
+
+		<!-- Botão com informações adicionais -->
+		<button type="button" class="btn btn-secondary" id="botaoHelpInfiltracao" data-container="body" title="Média das temperaturas mínimas (°C):" data-toggle="popover" data-placement="top" data-content="Caso não saiba a temperatura do mês mais frio da sua cidade ou região clique ANEXOS."
+			style="margin-bottom: 5px; border-radius: 100px; font-size: smaller;">
+			?
+		</button>
+
 		<div class="form-check">
 		<input class="form-check-input" type="radio" name="flexRadioDefault" id="temperaturaRadio1" value="igualAbaixo10">
 		<label class="form-check-label" for="temperaturaRadio1">
@@ -349,7 +367,8 @@
     width: fit-content;
     border-radius: 10px;
     margin-bottom: 15px;
-    margin-top: -21px;">
+    margin-top: -21px;
+	width: 45%;">
 		<label class="form-label"><b>Intervalo de Limpeza (anos):</b></label> <br>
 		<select class="custom-select" aria-label="Default select example" id="intervaloLimpeza" style="width: auto;">
 		<option value="0">Intervalo de Limpeza</option>
@@ -387,7 +406,7 @@
 			<label><b>Coeficiente de infiltração (L/m².dia):</b></label>
 			
 			<!-- Botão com informações adicionais -->
-			<button type="button" class="btn btn-secondary" id="botaoHelpInfiltracao" data-container="body" title="Coeficiente de infiltração:" data-toggle="popover" data-placement="top" data-content="Caso não saiba o Coeficiente de infiltração da sua região utilize a tabela a baixo e adote um valor provável."
+			<button type="button" class="btn btn-secondary" id="botaoHelpInfiltracao" data-container="body" title="Coeficiente de infiltração:" data-toggle="popover" data-placement="top" data-content="Sumidouros não são indicados para solos rochosos ou com coeficiente de infiltração baixo. Recomenda-se fazer ensaio de percolação onde será executado o sumidouro para determinar o Coeficiente de infiltração do solo, <b>caso não saiba o Coeficiente de infiltração da sua região utilize a tabela a baixo e adote um valor provável.</b>"
 			style="margin-bottom: 5px; border-radius: 100px; font-size: smaller;">
 			?
 			</button>
@@ -399,6 +418,8 @@
 			text-align: center; 
 			font-size: 20px; 
 			font-weight: 800">
+			Recomenda-se fazer ensaio de percolação onde será executado o sumidouro para determinar o Coeficiente de infiltração do solo.
+			<p></p>
 			<br>
 			
 			<table>
